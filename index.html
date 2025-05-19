@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <title> Apna TOON Games</title>
+    <link rel="stylesheet" href="style.css"/>
+    
+</head>
+<body>
+    <h1>Welcome on APNA TOON - Apne Games</h1>
+    <div class="page">
+<canvas id="gameCanvas" height="400" width="600">
+</canvas>
+<div class="controls">
+    <button onclick="pressButton('left')">Left</button>
+    <button onclick="pressButton('right')">Right</button>
+    <button onclick="pressButton('jump')">Jump</button>
+  </div>
+    </div>
+</body>
+<script src="script.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    function pressButton(action) {
+      if (action === 'left') keys["ArrowLeft"] = true;
+      if (action === 'right') keys["ArrowRight"] = true;
+      if (action === 'jump') keys["Space"] = true;
+
+      setTimeout(() => {
+        if (action === 'left') keys["ArrowLeft"] = false;
+        if (action === 'right') keys["ArrowRight"] = false;
+        if (action === 'jump') keys["Space"] = false;
+      }, 200);
+    }
+  </script>
+</html>
