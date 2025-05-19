@@ -2,7 +2,7 @@ const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
 const skyImage = new Image();
-skyImage.src = "sky.png";
+skyImage.src = "Sky.png";
 
 let skyX = 0;
 
