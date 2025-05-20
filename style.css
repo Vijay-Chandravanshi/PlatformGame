@@ -2,19 +2,15 @@ body {
     background-color: orange;
     /*background-image: url('chintu.png');*/
 }
-.container {
-    background: white;
-    border: Solid black 1vh;
-}
-
     canvas {
-      /*background-image: url('sky.png'); /* sky blue */
       display: block;
       margin: 0 auto;
       border: 2px solid black;
     }
 h1{
      text-align: center;
+    display: block;
+    justify-text: center;
 }
 .controls {
       text-align: center;
