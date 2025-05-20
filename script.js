@@ -1,6 +1,16 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
+let lives = 3;
+const maxLives = 3;
+
+function updateHearts() {
+  const heartElements = document.querySelectorAll('.heart');
+  heartElements.forEach((heart, index) => {
+    heart.style.visibility = index < lives ? 'visible' : 'hidden';
+  });
+};
+
 const skyImage = new Image();
 skyImage.src = "./sky.png";
 
@@ -57,7 +67,19 @@ class Player {
 
   update() {
  if (player.y > canvas.height + 200) {
-  gameOver = true;}
+   lives--;
+  updateHearts();
+
+  if (lives > 0) {
+    // Reposition player to start
+    player.x = 100;
+    player.y = 100;
+    player.dy = 0;
+  } else {
+    // Game Over
+    gameOver = true;
+    setTimeout(() => location.reload(), 3000); // auto-restart
+  };}
     if (keys["ArrowLeft"]) {
   this.dx = -this.speed;
   this.facingRight = false;
