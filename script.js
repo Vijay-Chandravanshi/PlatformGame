@@ -2,7 +2,7 @@ const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
 const skyImage = new Image();
-skyImage.src = "Sky.png";
+skyImage.src = "./sky.png";
 
 let skyX = 0;
 
@@ -21,9 +21,9 @@ const flagPlatform = {
 };
 
 const flagImage = new Image();
-flagImage.src = "flag.png";
+flagImage.src = "./flag.png";
 const blockImage = new Image();
-blockImage.src = "block.png"; // 32x32 tile texture
+blockImage.src = "./block.png"; // 32x32 tile texture
 
 document.addEventListener("keydown", e => keys[e.code] = true);
 document.addEventListener("keyup", e => keys[e.code] = false);
@@ -49,10 +49,10 @@ class Player {
       run2: new Image(),
       jump: new Image()
     };
-    this.images.idle.src = "Chintu.png";
-    this.images.run1.src = "Chintu_run1.png";
-    this.images.run2.src = "Chintu_run2.png";
-    this.images.jump.src = "Chintu_jump.png";
+    this.images.idle.src = "./chintu.png";
+    this.images.run1.src = "./chintuRun1.png";
+    this.images.run2.src = "./chintuRun2.png";
+    this.images.jump.src = "./chintuJump.png";
   }
 
   update() {
