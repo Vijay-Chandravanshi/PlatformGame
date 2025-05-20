@@ -1,4 +1,3 @@
-alert("Kese ho bacchon");
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -92,8 +91,7 @@ for (let block of platformBlocks) {
     this.onGround = true;
     break; // No need to check others once landed
   }
-}
-
+};
     if (this.y + this.height > canvas.height + cameraY) {
       this.y = canvas.height + cameraY - this.height;
       this.dy = 0;
@@ -107,22 +105,17 @@ for (let block of platformBlocks) {
     } else {
       this.frame = 0;
     }
-  }
-
+  };
   draw() {
   let imageToDraw = this.images.idle;
-
   if (!this.onGround) {
     imageToDraw = this.images.jump;
   } else if (this.dx !== 0) {
     imageToDraw = this.frame < 10 ? this.images.run1 : this.images.run2;
   }
-
   const drawX = this.x - cameraX;
   const drawY = this.y - cameraY;
-
   ctx.save(); // save current state
-
   if (!this.facingRight) {
     // Flip horizontally by scaling x by -1
     ctx.translate(drawX + this.width / 2, drawY + this.height / 2);
@@ -131,10 +124,8 @@ for (let block of platformBlocks) {
   } else {
     ctx.drawImage(imageToDraw, drawX, drawY, this.width, this.height);
   }
-
   ctx.restore(); // restore state
 }
-
 }
 
 class Platform {
@@ -242,8 +233,7 @@ if (gameWin) {
   ctx.font = "40px Arial";
   ctx.fillText("You Win!", canvas.width / 2 - 80, canvas.height / 2);
   return;
-}
-
+};
   requestAnimationFrame(gameLoop);
 }
 
