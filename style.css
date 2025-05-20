@@ -12,6 +12,10 @@ h1{
     display: block;
     justify-text: center;
 }
+ .heart {
+    width: 40px;
+    height: 40px;
+  }
 .controls {
       text-align: center;
       margin-top: 10px;
