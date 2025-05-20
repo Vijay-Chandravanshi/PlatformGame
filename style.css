@@ -1,6 +1,7 @@
 body {
-    background-color: orange;
     background-image: url('backgroundTexture.png');
+}
+.page{background-image: url('backgroundTexture.png');
 }
     canvas {
       display: block;
@@ -17,6 +18,7 @@ h1{
     height: 40px;
   }
 .controls {
+padding:50px;
       text-align: center;
       margin-top: 10px;
     }
