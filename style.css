@@ -1,6 +1,6 @@
 body {
     background-color: orange;
-    /*background-image: url('chintu.png');*/
+    background-image: url('backgroundTexture.png');
 }
     canvas {
       display: block;
@@ -21,6 +21,7 @@ h1{
       margin-top: 10px;
     }
     .controls button {
+padding: 20px;
       margin: 5px;
       font-size: 16px;
       cursor: pointer; 
