@@ -78,8 +78,8 @@ class Player {
   ) {
     // Spike hit detected
     player.lives -= 1;
-    player.x = startX; // Reposition player
-    player.y = startY;
+    player.x = 100; // Reposition player
+    player.y = 0;
     break;
   }
     }
