@@ -2,6 +2,12 @@ body {
     background-image: url('backgroundTexture.png');
 }
 .page{background-image: url('backgroundTexture.png');
+background-position: center;
+background-size: cover;
+position: fixed;
+display: flex;
+justify-content: center;
+align-items: center;
 }
     canvas {
       display: block;
@@ -18,14 +24,16 @@ h1{
     height: 40px;
   }
 .controls {
-padding:50px;
+padding:20px;
       text-align: center;
       margin-top: 10px;
     }
     .controls button {
-padding: 20px;
+      margin: 20px;
+      padding: 20px;
       margin: 5px;
       font-size: 16px;
       cursor: pointer; 
-  background-color: white;
+      background-color: white;
+box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
  }
