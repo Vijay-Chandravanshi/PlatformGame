@@ -47,8 +47,8 @@ transition: transform 0.2s ease-in-out;
 }
 .controls button {
 border-radius: 5px;
-width: 48px;
-height: 48px;
+width: 100px;
+height: 100px;
 border: none;
 background-color: transparent;
 cursor: pointer;
