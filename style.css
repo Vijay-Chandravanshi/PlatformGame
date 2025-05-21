@@ -33,7 +33,7 @@ margin:20px auto;
 display: flex;
 justify-content: center;
 align-items: center;
-gap: 35px;
+gap: 45px;
 
     }
     .controls img {
@@ -47,8 +47,8 @@ transition: transform 0.2s ease-in-out;
 }
 .controls button {
 border-radius: 5px;
-width: 100px;
-height: 100px;
+width: 72px;
+height: 72px;
 border: none;
 background-color: transparent;
 cursor: pointer;
