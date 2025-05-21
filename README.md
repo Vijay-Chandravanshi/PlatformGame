@@ -1,1 +1,2 @@
 # PlatformGame
+Apna TOON Platformer Game is a fun and colorful 2D side-scrolling adventure where you control a playful character through grassy platforms, bouncing jumps, and cute challenges. With a charming art style, moving clouds, and animated enemies, players must avoid falling, collect hearts, and reach the final flag to win. Perfect for kids and fans of classic platform games!
