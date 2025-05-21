@@ -5,9 +5,6 @@ body {
 background-position: center;
 background-size: cover;
 position: fixed;
-display: flex;
-justify-content: center;
-align-items: center;
 }
     canvas {
       display: block;
@@ -36,4 +33,5 @@ padding:20px;
       cursor: pointer; 
       background-color: white;
 box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+border:2px solid white;
  }
