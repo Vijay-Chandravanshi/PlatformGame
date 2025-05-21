@@ -16,6 +16,9 @@ skyImage.src = "./sky.png";
 
 let skyX = 0;
 
+const spikeImage = new Image();
+spikeImage.src = "./spike.png";
+
 const gravity = 0.5;
 const keys = {};
 let cameraX = 0;
@@ -66,6 +69,20 @@ class Player {
   }
 
   update() {
+    for (let spike of spikes) {
+  if (
+    player.x < spike.x + spike.width &&
+    player.x + player.width > spike.x &&
+    player.y < spike.y + spike.height &&
+    player.y + player.height > spike.y
+  ) {
+    // Spike hit detected
+    player.lives -= 1;
+    player.x = startX; // Reposition player
+    player.y = startY;
+    break;
+  }
+    }
  if (player.y > canvas.height + 200) {
    lives--;
   updateHearts();
@@ -162,6 +179,9 @@ class Platform {
   }
 
   draw() {
+    for (let spike of spikes) {
+  ctx.drawImage(spikeImage, spike.x - cameraX, spike.y - cameraY, spike.width, spike.height);
+    }
     // If the texture is small, repeat it across the platform width
     let pattern = ctx.createPattern(this.image, 'repeat');
     if (pattern) {
@@ -201,6 +221,12 @@ for (let p of platforms) {
     });
   }
 };
+
+const spikes = [
+  { x: 300, y: 340, width: 40, height: 40 },
+  { x: 600, y: 340, width: 40, height: 40 },
+  // Add more spikes as needed
+];
 
 function gameLoop() {
   // Update both camera X and Y to center on player
