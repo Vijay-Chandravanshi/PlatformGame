@@ -87,7 +87,7 @@ class Player {
     player.y + player.height > spike.y
   ) {
     // Spike hit detected
-    player.lives -= 1;
+    lives -= 1;
      updateHearts();
     break;
   }
@@ -198,7 +198,7 @@ const platforms = [
   // Each platform is now made of x, y, and number of blocks
   { x: 0, y: 350, blocks: 10},
   { x: 300, y: 300, blocks: 6 },
-  { x: 500, y: 250, blocks: 15, hasSpikes: true },
+  { x: 500, y: 250, blocks: 15},
   { x: 800, y: 200, blocks: 5 },
 ];
 const platformBlocks = [];
