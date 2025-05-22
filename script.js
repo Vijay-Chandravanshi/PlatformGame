@@ -216,7 +216,7 @@ for (let p of platforms) {
   }
 };
 for (let p of platforms) {
-  if (platform.hasSpikes) {
+  if (p.hasSpikes) {
     for (let i = 0; i < p.blocks; i++) {
       spikes.push({
         x: platform.x + i * blockSize,
