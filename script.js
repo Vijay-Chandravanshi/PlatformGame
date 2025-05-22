@@ -5,6 +5,16 @@ let lives = 3;
 const maxLives = 3;
 
 function updateHearts() {
+  if (lives > 0) {
+    // Reposition player to start
+    player.x = 100;
+    player.y = 100;
+    player.dy = 0;
+  } else {
+    // Game Over
+    gameOver = true;
+    setTimeout(() => location.reload(), 3000); // auto-restart
+  };
   const heartElements = document.querySelectorAll('.heart');
   heartElements.forEach((heart, index) => {
     heart.style.visibility = index < lives ? 'visible' : 'hidden';
@@ -69,20 +79,23 @@ class Player {
   }
 
   update() {
+    for (let spike of spikes) {
+  if (
+    player.x < spike.x + spike.width &&
+    player.x + player.width > spike.x &&
+    player.y < spike.y + spike.height &&
+    player.y + player.height > spike.y
+  ) {
+    // Spike hit detected
+    player.lives -= 1;
+     updateHearts();
+    break;
+  }
+};
  if (player.y > canvas.height + 200) {
    lives--;
   updateHearts();
-
-  if (lives > 0) {
-    // Reposition player to start
-    player.x = 100;
-    player.y = 100;
-    player.dy = 0;
-  } else {
-    // Game Over
-    gameOver = true;
-    setTimeout(() => location.reload(), 3000); // auto-restart
-  };}
+}
     if (keys["ArrowLeft"]) {
   this.dx = -this.speed;
   this.facingRight = false;
@@ -183,13 +196,14 @@ const blockSize = 32;
 
 const platforms = [
   // Each platform is now made of x, y, and number of blocks
-  { x: 0, y: 350, blocks: 10 },
+  { x: 0, y: 350, blocks: 10, hasSpikes: true },
   { x: 300, y: 300, blocks: 6 },
-  { x: 500, y: 250, blocks: 15 },
+  { x: 500, y: 250, blocks: 15, hasSpikes: true },
   { x: 800, y: 200, blocks: 5 },
 ];
 const platformBlocks = [];
 platforms.push(flagPlatform);
+const spikes = [];
 
 for (let p of platforms) {
   for (let i = 0; i < p.blocks; i++) {
@@ -199,6 +213,18 @@ for (let p of platforms) {
       width: blockSize,
       height: blockSize
     });
+  }
+};
+for (let p of platforms) {
+  if (platform.hasSpikes) {
+    for (let i = 0; i < p.blocks; i++) {
+      spikes.push({
+        x: platform.x + i * blockSize,
+        y: platform.y - blockSize,
+        width: blockSize,
+        height: blockSize
+      });
+    }
   }
 };
 
