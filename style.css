@@ -9,8 +9,10 @@ background-position: center;
 background-size: cover;
 height: 100%;
 width: 100%;
+      min-height: 100vh;
 }
     canvas {
+          font-family: 'Baloo Bhai 2', sans-serif;
       display: block;
       margin: 0 auto;
       border: 2px solid black;
