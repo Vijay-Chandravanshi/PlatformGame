@@ -5,6 +5,24 @@
     <title>Apna TOON Games</title>
      <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"/>
+    <script>
+  window.onload = () => {
+    function pressButton(action) {
+      if (action === 'left') keys["ArrowLeft"] = true;
+      if (action === 'right') keys["ArrowRight"] = true;
+      if (action === 'jump') keys["Space"] = true;
+
+      setTimeout(() => {
+        if (action === 'left') keys["ArrowLeft"] = false;
+        if (action === 'right') keys["ArrowRight"] = false;
+        if (action === 'jump') keys["Space"] = false;
+      }, 200);
+    }
+
+    // Expose to global for buttons
+    window.pressButton = pressButton;
+  };
+</script>
 </head>
 <body>
 <div class="page">
@@ -25,17 +43,4 @@
     </div>
 </body>
     <script src="./script.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    function pressButton(action) {
-      if (action === 'left') keys["ArrowLeft"] = true;
-      if (action === 'right') keys["ArrowRight"] = true;
-      if (action === 'jump') keys["Space"] = true;
-
-      setTimeout(() => {
-        if (action === 'left') keys["ArrowLeft"] = false;
-        if (action === 'right') keys["ArrowRight"] = false;
-        if (action === 'jump') keys["Space"] = false;
-      }, 200);
-    }
-  </script>
 </html>
