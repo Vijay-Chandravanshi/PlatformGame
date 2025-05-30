@@ -199,7 +199,7 @@ const platforms = [
   { x: 0, y: 350, blocks: 10},
   { x: 300, y: 300, blocks: 6 },
   { x: 500, y: 250, blocks: 15},
-  { x: 800, y: 200, blocks: 5, hasSpikes: true },
+  { x: 800, y: 250, blocks: 2, hasSpikes: true },
 ];
 const platformBlocks = [];
 //platforms.push(flagPlatform);
@@ -221,8 +221,8 @@ for (let platform of platforms) {
       spikes.push({
         x: platform.x + i * blockSize,
         y: platform.y - blockSize,
-        width: blockSize,
-        height: blockSize
+        width: blockSize - 4,
+        height: blockSize - 4;
       });
     }
   }
