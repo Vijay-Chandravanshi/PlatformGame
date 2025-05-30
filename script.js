@@ -92,7 +92,7 @@ class Player {
     break;
   }
 };
- if (player.y > canvas.height + 200) {
+ if (this.y > canvas.height + 200) {
    lives--;
   updateHearts();
 }
@@ -202,7 +202,7 @@ const platforms = [
   { x: 800, y: 200, blocks: 5 },
 ];
 const platformBlocks = [];
-platforms.push(flagPlatform);
+//platforms.push(flagPlatform);
 const spikes = [];
 
 for (let p of platforms) {
