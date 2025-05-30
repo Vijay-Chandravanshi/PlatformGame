@@ -62,7 +62,7 @@ cursor: pointer;
 padding: 0;
 box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
-.controls Buttonn:hover {
-transform: scale(1.2);
-transition: transform 0.2s ease-in-out;
+.controls button:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
 }
