@@ -66,3 +66,8 @@ box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
   transform: scale(1.2);
   transition: transform 0.2s ease-in-out;
 }
+canvas #gameCanvas {
+    width: 100%; /* Make it take the full width of its container (.page) */
+    max-width: 600px; /* Prevent it from becoming larger than its native resolution */
+    height: auto;
+}
