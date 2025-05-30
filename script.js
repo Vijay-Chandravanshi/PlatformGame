@@ -222,7 +222,7 @@ for (let platform of platforms) {
         x: platform.x + i * blockSize,
         y: platform.y - blockSize,
         width: blockSize - 4,
-        height: blockSize - 4;
+        height: blockSize - 4
       });
     }
   }
