@@ -51,6 +51,20 @@ blockImage.src = "./block.png"; // 32x32 tile texture
 document.addEventListener("keydown", e => keys[e.code] = true);
 document.addEventListener("keyup", e => keys[e.code] = false);
 
+function handleButtonDown(action) {
+  // console.log(action + " down"); // For debugging
+  if (action === 'left') keys["ArrowLeft"] = true;
+  if (action === 'right') keys["ArrowRight"] = true;
+  if (action === 'jump') keys["Space"] = true;
+};
+
+function handleButtonUp(action) {
+  // console.log(action + " up"); // For debugging
+  if (action === 'left') keys["ArrowLeft"] = false;
+  if (action === 'right') keys["ArrowRight"] = false;
+  if (action === 'jump') keys["Space"] = false;
+};
+
 class Player {
   constructor() {
     this.width = 40;
