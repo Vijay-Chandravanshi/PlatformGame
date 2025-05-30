@@ -199,7 +199,7 @@ const platforms = [
   { x: 0, y: 350, blocks: 10},
   { x: 300, y: 300, blocks: 6 },
   { x: 500, y: 250, blocks: 15},
-  { x: 800, y: 200, blocks: 5 },
+  { x: 800, y: 200, blocks: 5 hasSpikes: true },
 ];
 const platformBlocks = [];
 //platforms.push(flagPlatform);
@@ -257,6 +257,9 @@ for (let p of platforms) {
     const y = p.y - cameraY;
     ctx.drawImage(blockImage, x, y, blockSize, blockSize);
   }
+};
+  for (let spike of spikes) {
+  ctx.drawImage(spikeImage, spike.x - cameraX, spike.y - cameraY, spike.width, spike.height);
 };
 
 ctx.drawImage(flagImage, flagPlatform.x - cameraX, flagPlatform.y - 60 - cameraY, 40, 60);
