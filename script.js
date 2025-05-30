@@ -199,7 +199,7 @@ const platforms = [
   { x: 0, y: 350, blocks: 10},
   { x: 300, y: 300, blocks: 6 },
   { x: 500, y: 250, blocks: 15},
-  { x: 800, y: 200, blocks: 5 hasSpikes: true },
+  { x: 800, y: 200, blocks: 5, hasSpikes: true },
 ];
 const platformBlocks = [];
 //platforms.push(flagPlatform);
