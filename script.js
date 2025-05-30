@@ -210,7 +210,7 @@ const blockSize = 32;
 
 const platforms = [
   // Each platform is now made of x, y, and number of blocks
-  { x: 0, y: 350, blocks: 10},
+  { x: 0, y: 350, blocks: 9},
   { x: 300, y: 300, blocks: 6 },
   { x: 500, y: 250, blocks: 15},
   { x: 800, y: 250, blocks: 2, hasSpikes: true },
