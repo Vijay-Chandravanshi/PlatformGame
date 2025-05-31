@@ -288,14 +288,14 @@ if (
 
 if (gameOver) {
   ctx.fillStyle = "red";
-  ctx.font = "40px 'Baloo Bhai 2'";
+  ctx.font = "40px";
   ctx.fillText("Game Over!", canvas.width / 2 - 100, canvas.height / 2);
   return;
 }
 
 if (gameWin) {
   ctx.fillStyle = "green";
-  ctx.font = "40px 'Baloo Bhai 2'";
+  ctx.font = "40px";
   ctx.fillText("You Win!", canvas.width / 2 - 80, canvas.height / 2);
   return;
 };
