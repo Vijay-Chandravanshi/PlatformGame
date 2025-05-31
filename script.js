@@ -42,7 +42,6 @@ const flagPlatform = {
   width: 60,
   height: 20
 };
-
 const flagImage = new Image();
 flagImage.src = "./flag.png";
 const blockImage = new Image();
@@ -121,6 +120,7 @@ class Player {
 };
 
     if (keys["Space"] && this.onGround) {
+       jump();
       this.dy = this.jumpPower;
       this.onGround = false;
     }
@@ -301,5 +301,11 @@ if (gameWin) {
 };
   requestAnimationFrame(gameLoop);
 }
-
+const jumpSound = new Audio('jumpSound.mp3');
+function jump() {
+         if (player.isOnGround) {
+        player.velocityY = -15;
+        jumpSound.play(); // 🔊 Play jump sound
+    }
+}
 gameLoop();
