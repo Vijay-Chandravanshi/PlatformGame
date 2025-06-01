@@ -280,12 +280,12 @@ for (let p of platforms) {
   ctx.drawImage(spikeImage, spike.x - cameraX, spike.y - cameraY, spike.width - 4, spike.height -4);
 };
 
-ctx.drawImage(flagImage, flagPlatform.x - cameraX, flagPlatform.y - 60 - cameraY, 40, 40);
+ctx.drawImage(flagImage, flagPlatform.x - cameraX, flagPlatform.y - 60 - cameraY, 40, 60);
 if (
   player.x + player.width > flagPlatform.x &&
   player.x < flagPlatform.x + flagPlatform.width &&
   player.y + player.height > flagPlatform.y &&
-  player.y< flagPlatform.y + 10
+  player.y < flagPlatform.y + 10
 ) {
   gameWin = true;
 }
