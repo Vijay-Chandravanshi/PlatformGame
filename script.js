@@ -37,8 +37,8 @@ let cameraY = 0;
 let gameOver = false;
 let gameWin = false;
 const flagPlatform = {
-  x: 1000,  // adjust as per level
-  y: 300,
+  x: 950,  // adjust as per level
+  y: 250,
   width: 60,
   height: 20
 };
@@ -288,14 +288,14 @@ if (
 
 if (gameOver) {
   ctx.fillStyle = "red";
-  ctx.font = "40px";
+  ctx.font = "40px 'Baloo Bhai 2'";
   ctx.fillText("Game Over!", canvas.width / 2 - 100, canvas.height / 2);
   return;
 }
 
 if (gameWin) {
   ctx.fillStyle = "green";
-  ctx.font = "40px";
+  ctx.font = "40px 'Baloo Bhai 2'";
   ctx.fillText("You Win!", canvas.width / 2 - 80, canvas.height / 2);
   return;
 };
