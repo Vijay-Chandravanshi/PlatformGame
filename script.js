@@ -280,7 +280,7 @@ for (let p of platforms) {
   ctx.drawImage(spikeImage, spike.x - cameraX, spike.y - cameraY, spike.width - 4, spike.height -4);
 };
 
-ctx.drawImage(flagImage, flagPlatform.x - cameraX, flagPlatform.y - 60 - cameraY, 40, 60);
+ctx.drawImage(flagImage, flagPlatform.x - cameraX, flagPlatform.y - 60 - cameraY, 20, 40);
 if (
   player.x + player.width > flagPlatform.x &&
   player.x < flagPlatform.x + flagPlatform.width &&
