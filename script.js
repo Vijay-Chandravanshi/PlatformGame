@@ -37,9 +37,9 @@ let cameraY = 0;
 let gameOver = false;
 let gameWin = false;
 const flagPlatform = {
-  x: 900,  // adjust as per level
-  y: 250,
-  width: 40,
+  x: 1700,  // adjust as per level
+  y: 150,
+  width: 60,
   height: 20
 };
 const flagImage = new Image();
@@ -214,6 +214,10 @@ const platforms = [
   { x: 300, y: 300, blocks: 6 },
   { x: 500, y: 250, blocks: 15},
   { x: 800, y: 250, blocks: 2, hasSpikes: true },
+   { x: 1300, y: 200, blocks: 3},
+   { x: 1400, y: 150, blocks: 8},
+   { x: 1500, y: 150, blocks: 1, hasSpikes: true},
+  { x: 1600, y: 150, blocks: 1, hasSpikes: true}
 ];
 const platformBlocks = [];
 //platforms.push(flagPlatform);
@@ -273,10 +277,10 @@ for (let p of platforms) {
   }
 };
   for (let spike of spikes) {
-  ctx.drawImage(spikeImage, spike.x - cameraX, spike.y - cameraY, spike.width, spike.height);
+  ctx.drawImage(spikeImage, spike.x - cameraX, spike.y - cameraY, spike.width - 4, spike.height -4);
 };
 
-ctx.drawImage(flagImage, flagPlatform.x - cameraX, flagPlatform.y - 60 - cameraY, 40, 60);
+ctx.drawImage(flagImage, flagPlatform.x - cameraX, flagPlatform.y - 60 - cameraY, 40, 40);
 if (
   player.x + player.width > flagPlatform.x &&
   player.x < flagPlatform.x + flagPlatform.width &&
