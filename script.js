@@ -21,8 +21,14 @@ function updateHearts() {
   });
 };
 
+const skyThemes = [
+{ sky: "./sky.png", block: "./block.png" },
+{ sky: "./night.png", block: "./nightBlock.png" }
+];
+
 const skyImage = new Image();
-skyImage.src = "./sky.png";
+const selectedTheme = skyThemes[Math.floor(Math.random() * skyThemes.length)];
+skyImage.src = selectedTheme.sky;
 
 let skyX = 0;
 
@@ -45,7 +51,7 @@ const flagPlatform = {
 const flagImage = new Image();
 flagImage.src = "./flag.png";
 const blockImage = new Image();
-blockImage.src = "./block.png"; // 32x32 tile texture
+blockImage.src = selectedTheme.block; // 32x32 tile texture
 
 document.addEventListener("keydown", e => keys[e.code] = true);
 document.addEventListener("keyup", e => keys[e.code] = false);
@@ -273,7 +279,14 @@ for (let p of platforms) {
   for (let i = 0; i < p.blocks; i++) {
     const x = p.x + i * blockSize - cameraX;
     const y = p.y - cameraY;
+     ctx.save(); // Save current canvas state
+    ctx.shadowColor = "rgba(255, 255, 0, 0.1)";  // Yellow glow
+    ctx.shadowBlur = 50;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+
     ctx.drawImage(blockImage, x, y, blockSize, blockSize);
+    ctx.restore(); // Restore canvas state
   }
 };
   for (let spike of spikes) {
@@ -309,7 +322,7 @@ const jumpSound = new Audio('jumpSound.mp3');
 function jump() {
          if (player.isOnGround) {
         player.velocityY = -15;
-        jumpSound.play(); // 🔊 Play jump sound
+        jumpSound.play(); // ?? Play jump sound
     }
 }
 gameLoop();
