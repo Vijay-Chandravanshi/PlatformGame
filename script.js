@@ -37,8 +37,8 @@ let cameraY = 0;
 let gameOver = false;
 let gameWin = false;
 const flagPlatform = {
-  x: 1700,  // adjust as per level
-  y: 150,
+  x: 1400,  // adjust as per level
+  y: 200,
   width: 60,
   height: 20
 };
@@ -214,10 +214,10 @@ const platforms = [
   { x: 300, y: 300, blocks: 6 },
   { x: 500, y: 250, blocks: 15},
   { x: 800, y: 250, blocks: 2, hasSpikes: true },
-   { x: 1300, y: 200, blocks: 3},
-   { x: 1400, y: 150, blocks: 8},
-   { x: 1500, y: 150, blocks: 1, hasSpikes: true},
-  { x: 1600, y: 150, blocks: 1, hasSpikes: true}
+   { x: 1000, y: 200, blocks: 3},
+   { x: 1100, y: 150, blocks: 8},
+   { x: 1200, y: 150, blocks: 1, hasSpikes: true},
+  { x: 1300, y: 150, blocks: 1, hasSpikes: true}
 ];
 const platformBlocks = [];
 //platforms.push(flagPlatform);
@@ -285,7 +285,7 @@ if (
   player.x + player.width > flagPlatform.x &&
   player.x < flagPlatform.x + flagPlatform.width &&
   player.y + player.height > flagPlatform.y &&
-  player.y + player.height < flagPlatform.y + 10
+  player.y< flagPlatform.y + 10
 ) {
   gameWin = true;
 }
