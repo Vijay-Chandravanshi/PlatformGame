@@ -22,8 +22,8 @@ function updateHearts() {
 };
 
 const skyThemes = [
-{ sky: "./sky.png", block: "./block.png" },
-{ sky: "./night.png", block: "./nightBlock.png" }
+{ sky: "./images/sky.png", block: "./images/block.png" },
+{ sky: "./images/night.png", block: "./images/nightBlock.png" }
 ];
 
 const skyImage = new Image();
@@ -33,7 +33,7 @@ skyImage.src = selectedTheme.sky;
 let skyX = 0;
 
 const spikeImage = new Image();
-spikeImage.src = "./spike.png";
+spikeImage.src = "./images/spike.png";
 
 const gravity = 0.5;
 const keys = {};
@@ -49,7 +49,7 @@ const flagPlatform = {
   height: 20
 };
 const flagImage = new Image();
-flagImage.src = "./flag.png";
+flagImage.src = "./images/flag.png";
 const blockImage = new Image();
 blockImage.src = selectedTheme.block; // 32x32 tile texture
 
@@ -91,10 +91,10 @@ class Player {
       run2: new Image(),
       jump: new Image()
     };
-    this.images.idle.src = "./chintu.png";
-    this.images.run1.src = "./chintuRun1.png";
-    this.images.run2.src = "./chintuRun2.png";
-    this.images.jump.src = "./chintuJump.png";
+    this.images.idle.src = "./images/chintu.png";
+    this.images.run1.src = "./images/chintuRun1.png";
+    this.images.run2.src = "./images/chintuRun2.png";
+    this.images.jump.src = "./images/chintuJump.png";
   }
 
   update() {
