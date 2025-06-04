@@ -5,25 +5,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Apna TOON Games</title>
      <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"/>
-    <script>
-  window.onload = () => {
-    function pressButton(action) {
-      if (action === 'left') keys["ArrowLeft"] = true;
-      if (action === 'right') keys["ArrowRight"] = true;
-      if (action === 'jump') keys["Space"] = true;
-
-      setTimeout(() => {
-        if (action === 'left') keys["ArrowLeft"] = false;
-        if (action === 'right') keys["ArrowRight"] = false;
-        if (action === 'jump') keys["Space"] = false;
-      }, 200);
-    }
-
-    // Expose to global for buttons
-    window.pressButton = pressButton;
-  };
-</script>
+    <link rel="stylesheet" href="style.css"/>   
 </head>
 <body>
 <div class="page">
@@ -45,6 +27,24 @@
         ontouchstart="handleButtonDown('jump')" ontouchend="handleButtonUp('jump')" ontouchcancel="handleButtonUp('jump')"><img src="jumpBtn.png" alt="Jump" width="40" height="40" id="jumpBtn" class="controlBtn"></button>
   </div>
     </div>
+     <script>
+  window.onload = () => {
+    function pressButton(action) {
+      if (action === 'left') keys["ArrowLeft"] = true;
+      if (action === 'right') keys["ArrowRight"] = true;
+      if (action === 'jump') keys["Space"] = true;
+
+      setTimeout(() => {
+        if (action === 'left') keys["ArrowLeft"] = false;
+        if (action === 'right') keys["ArrowRight"] = false;
+        if (action === 'jump') keys["Space"] = false;
+      }, 200);
+    }
+
+    // Expose to global for buttons
+    window.pressButton = pressButton;
+  };
+</script>
+     <script src="./script.js" type="text/javascript" charset="utf-8"></script>
 </body>
-    <script src="./script.js" type="text/javascript" charset="utf-8"></script>
 </html>
