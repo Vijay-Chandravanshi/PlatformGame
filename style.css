@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: column; /* If .page is the main content block */
     min-height: 100vh;
-    width:100vh;
+    width:100vw;
     background-image: url('backgroundTexture.png');
     background-size: cover;
 justify-content:center;
