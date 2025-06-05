@@ -29,6 +29,13 @@ const skyThemes = [
 const skyImage = new Image();
 const selectedTheme = skyThemes[Math.floor(Math.random() * skyThemes.length)];
 skyImage.src = selectedTheme.sky;
+skyImage.src = selectedTheme.sky;
+skyImage.decode().then(() => {
+  gameLoop(); // start the game only after the sky image is fully decoded and ready
+}).catch(() => {
+  // Fallback in case image fails to decode
+  gameLoop();
+});
 
 let skyX = 0;
 
@@ -325,4 +332,4 @@ function jump() {
         jumpSound.play(); // ?? Play jump sound
     }
 }
-gameLoop();
+//gameLoop();
