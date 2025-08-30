@@ -1,4 +1,6 @@
+const text = 'Super jumb Adventure - Apna TOON';
 const gameUrl = 'https://apna-toon.blogspot.com/2025/05/super-jumb-adventure.html';
+let mobileDevice = false;
 
 let messagePage = document.createElement('div');
 messagePage.classList.add('message-page');
@@ -66,11 +68,15 @@ shareButton.src = './images/shareBtn.png';
 shareButton.classList.add('share-Btn');
 figureShare.appendChild(shareButton);
 shareButton.addEventListener('click',function(){
-console.log('share');navigator.share({
+console.log('share');
+if(mobileDevice){
+navigator.share({
       title: "Super Jump Adventure",
       url: gameUrl
       // You can also add files (images/screenshots) if supported
-    })
+    })} else {
+window.location.href = `https://wa.me/?text=${text}%20${gameUrl}`;
+}
 });
 
 let nextLevelButton = document.createElement('img');
@@ -89,9 +95,9 @@ function isMobileDevice() {
   if (isMobileDevice()) {
     //  Mobile share
     console.log('This is Mobile device');
+mobileDevice = true;
   } else {
     //  Desktop fallback
     console.log('This is Desktop device');
+mobileDevice = false;
   }
-
-
