@@ -48,7 +48,7 @@ homeButton.classList.add('home-Btn');
 figureHome.appendChild(homeButton);
 homeButton.addEventListener('click',function(){
 console.log('home');
-window.herf('https://apna-toon.blogspot.com');
+window.location.href = 'https://apna-toon.blogspot.com';
 });
 
 
@@ -93,4 +93,5 @@ function isMobileDevice() {
     //  Desktop fallback
     console.log('This is Desktop device');
   }
+
 
