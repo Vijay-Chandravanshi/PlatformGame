@@ -13,7 +13,7 @@ function updateHearts() {
   } else {
     // Game Over
     gameOver = true;
-    setTimeout(() => location.reload(), 3000); // auto-restart
+    //setTimeout(() => location.reload(), 3000); // auto-restart
   };
   const heartElements = document.querySelectorAll('.heart');
   heartElements.forEach((heart, index) => {
@@ -96,11 +96,13 @@ class Player {
       idle: new Image(),
       run1: new Image(),
       run2: new Image(),
+	run3: new Image(),
       jump: new Image()
     };
     this.images.idle.src = "./images/chintu.png";
     this.images.run1.src = "./images/chintuRun1.png";
     this.images.run2.src = "./images/chintuRun2.png";
+	this.images.run3.src = "./images/chintuRun3.png";
     this.images.jump.src = "./images/chintuJump.png";
   }
 
@@ -133,7 +135,6 @@ class Player {
 };
 
     if (keys["Space"] && this.onGround) {
-       jump();
       this.dy = this.jumpPower;
       this.onGround = false;
     }
@@ -176,7 +177,7 @@ for (let block of platformBlocks) {
   if (!this.onGround) {
     imageToDraw = this.images.jump;
   } else if (this.dx !== 0) {
-    imageToDraw = this.frame < 10 ? this.images.run1 : this.images.run2;
+    imageToDraw = this.frame < 10 ? this.images.run1 : this.frame < 20 ? this.images.run2 : this.images.run3;
   }
   const drawX = this.x - cameraX;
   const drawY = this.y - cameraY;
@@ -311,25 +312,21 @@ if (
 }
 
 if (gameOver) {
-  ctx.fillStyle = "red";
-  ctx.font = "40px 'Baloo Bhai 2'";
-  ctx.fillText("Game Over!", canvas.width / 2 - 100, canvas.height / 2);
+	document.body.appendChild(messagePage);
+	message.innerHTML = 'Game Over';
+	message.style.color = 'red';
+btnBox.appendChild(figureReload);
   return;
 }
 
 if (gameWin) {
-  ctx.fillStyle = "green";
-  ctx.font = "40px 'Baloo Bhai 2'";
-  ctx.fillText("You Win!", canvas.width / 2 - 80, canvas.height / 2);
+//setTimeout(() => location.reload(), 3000);
+document.body.appendChild(messagePage);
+	message.innerHTML = 'You Win';
+	message.style.color = 'green';
+btnBox.appendChild(figureNextLevel);
   return;
 };
   requestAnimationFrame(gameLoop);
-}
-const jumpSound = new Audio('jumpSound.mp3');
-function jump() {
-         if (player.isOnGround) {
-        player.velocityY = -15;
-        jumpSound.play(); // ?? Play jump sound
-    }
 }
 //gameLoop();
