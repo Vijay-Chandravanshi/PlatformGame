@@ -1,0 +1,62 @@
+.message-page{
+top:0;
+left:0;
+position: fixed;
+Width: 100%;
+Height: 100%;
+background: rgba(0,0,0,0.2);
+display: flex;
+float:center;
+justify-content: center;
+align-items: center;
+z-index:999;
+}
+.close-message{
+border:none;
+border-radius:50%;
+background:none;
+padding:2px;
+box-shadow: 2px 2px 4px rgba(0,0,0,0.5);}
+
+.message-box{
+gap:20;
+display: inline-block;
+Width: auto;
+Height: auto;
+justify-content: center;
+align-items: center;
+background: rgba(225,225,225,0.9);
+border-radius:24px;
+border:2px solid Black;
+padding:20px;
+}
+figure{
+display:inline-block;
+align-item:center;
+justify-content: center;
+}
+
+figcaption{margin-top:5px;
+text-align:center;
+}
+
+.message{
+text-align:center;}
+
+.button-box{
+display: block;
+justify-content: center;
+align-items: center;
+}
+.home-Btn, .reload-Btn, .nextLevel-Btn, .share-Btn{
+height:30px;
+margin:5px;
+width:30px;
+cursor: pointer;
+bottom:0;
+}
+.home-Btn:hover, .reload-Btn:hover, .nextLevel-Btn:hover, .share-Btn:hover{
+height:35px;
+margin:5px;
+width:35px;
+}
