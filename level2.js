@@ -50,7 +50,7 @@ let cameraY = 0;
 let gameOver = false;
 let gameWin = false;
 const flagPlatform = {
-  x: 1600,  // adjust as per level
+  x: 1500,  // adjust as per level
   y: 250,
   width: 60,
   height: 20
@@ -229,7 +229,7 @@ const platforms = [
   { x: 500, y: 250, blocks: 15},
   { x: 800, y: 250, blocks: 1, hasSpikes: true },
    { x: 1000, y: 200, blocks: 3},
-   { x: 1100, y: 150, blocks: 8},
+   { x: 1150, y: 150, blocks: 8},
    { x: 1200, y: 150, blocks: 1, hasSpikes: true},
   { x: 1400, y: 150, blocks: 1, hasSpikes: true}
 ];
