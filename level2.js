@@ -50,8 +50,8 @@ let cameraY = 0;
 let gameOver = false;
 let gameWin = false;
 const flagPlatform = {
-  x: 1500,  // adjust as per level
-  y: 250,
+  x: 1600,  // adjust as per level
+  y: 300,
   width: 60,
   height: 20
 };
